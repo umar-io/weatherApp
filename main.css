@@ -204,5 +204,17 @@ footer p {
   
   .infoDisplay {
     width: 100%;
+    padding: 10px;
+  }
+
+  footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  footer p{
+    text-align: center;
+    font-size: 13px;
   }
 }
