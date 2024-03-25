@@ -54,7 +54,23 @@ dataPromise
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        let location = document.querySelector(".city");
+        location.innerText = `${data.name}, ${data.sys.country}`;
+
+        let now = new Date();
+        let date = document.querySelector(".date");
+        date.innerText = dateCreater(now);
+
+        let temp = document.querySelector(".temp");
+        temp.innerHTML = `${Math.round(data.main.temp)}<span>°c</span>`;
+
+        let weather_el = document.querySelector(".weather");
+        weather_el.innerText = data.weather[0].main;
+
+        let hilow = document.querySelector(".hi-low");
+        hilow.innerText = `${Math.round(data.main.temp_min)}°c / ${Math.round(
+          data.main.temp_max
+        )}°c`;
       })
       .catch((error) => {
         console.error("Error fetching weather data:", error);
@@ -72,9 +88,58 @@ function getLocationBySearch(location) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      let location = document.querySelector(".city");
+      location.innerText = `${data.name}, ${data.sys.country}`;
+
+      let now = new Date();
+      let date = document.querySelector(".date");
+      date.innerText = dateCreater(now);
+
+      let temp = document.querySelector(".temp");
+      temp.innerHTML = `${Math.round(data.main.temp)}<span>°c</span>`;
+
+      let weather_el = document.querySelector(".weather");
+      weather_el.innerText = data.weather[0].main;
+
+      let hilow = document.querySelector(".hi-low");
+      hilow.innerText = `${Math.round(data.main.temp_min)}°c / ${Math.round(
+        data.main.temp_max
+      )}°c`;
     })
     .catch((error) => {
       console.error("Error fetching weather data:", error);
     });
+}
+
+function dateCreater(d) {
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let day = days[d.getDay()];
+  let date = d.getDate();
+  let month = months[d.getMonth()];
+  let year = d.getFullYear();
+
+  return `${day} ${date} ${month} ${year}`;
 }
