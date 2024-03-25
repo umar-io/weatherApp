@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="shortcut icon" href="./assets/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <!-- <p class="hidden"></p> -->
+    <header>
+      <h2>Weather.io</h2>
+      <nav>
+        <span class="input-group">
+            <input type="text" placeholder="enter a location or zipcode" class="location">
+            <img src="./assets/search.png" alt="" width="20" class="searcher">
+        </span>
+      </nav>
+    </header>
+    <main>
+      <section class="infoDisplay">
+        <article class="location">
+          <div class="city">New York, US</div>
+          <div class="date">Wednesday 22 July 2020</div>
+        </article>
+        <div class="current">
+          <div class="temp">15<span>°c</span></div>
+          <div class="weather">Sunny</div>
+          <div class="hi-low">13°c / 16°c</div>
+        </div>
+
+      </section>
+    </main>
+    <footer>
+      <p>
+        &copy all right resevered <span class="year"></span>. Design with 💌 by
+        Umario
+      </p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
